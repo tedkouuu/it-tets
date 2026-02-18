@@ -2,9 +2,11 @@ import Link from "next/link";
 
 import { brand } from "@/config/brand";
 import type { ServicePageData } from "@/data/services";
+import { subservicesByService } from "@/data/subservices";
 
 import { Breadcrumbs } from "../common/Breadcrumbs";
 import { CTASection } from "../common/CTASection";
+import { Reveal } from "../common/Reveal";
 import styles from "./ServicePageTemplate.module.css";
 
 type ServicePageTemplateProps = {
@@ -12,6 +14,8 @@ type ServicePageTemplateProps = {
 };
 
 export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
+  const subservices = subservicesByService[service.slug];
+
   return (
     <>
       <section className={styles.hero}>
@@ -23,7 +27,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               { label: service.navLabel, href: `/services/${service.slug}` },
             ]}
           />
-          <div className={styles.heroContent}>
+          <Reveal className={styles.heroContent}>
             <h1>{service.title}</h1>
             <p>{service.intro}</p>
             <div className={styles.heroActions}>
@@ -34,7 +38,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                 Заявете консултация
               </Link>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -42,10 +46,16 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         <div className="container">
           <h2>Подуслуги</h2>
           <div className={styles.cards}>
-            {service.subservices.map((item) => (
-              <article key={item} className={styles.card}>
-                <h3>{item}</h3>
-              </article>
+            {subservices.map((item, index) => (
+              <Reveal key={item.slug} delay={index * 60}>
+                <article className={styles.card}>
+                  <h3>{item.title}</h3>
+                  <p>{item.summary}</p>
+                  <Link href={`/services/${service.slug}/${item.slug}`} className={styles.cardLink}>
+                    Към подуслугата
+                  </Link>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -54,23 +64,27 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
       <section className={styles.section}>
         <div className="container">
           <div className={styles.grid}>
-            <article className={styles.panel}>
-              <h2>Основни дейности</h2>
-              <ul>
-                {service.activities.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+            <Reveal>
+              <article className={styles.panel}>
+                <h2>Основни дейности</h2>
+                <ul>
+                  {service.activities.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            </Reveal>
 
-            <article className={styles.panel}>
-              <h2>Технически акценти</h2>
-              <ul>
-                {service.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+            <Reveal delay={120}>
+              <article className={styles.panel}>
+                <h2>Технически акценти</h2>
+                <ul>
+                  {service.highlights.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            </Reveal>
           </div>
         </div>
       </section>

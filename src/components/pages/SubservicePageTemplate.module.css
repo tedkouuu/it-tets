@@ -1,0 +1,148 @@
+.hero {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+  background: radial-gradient(
+      circle at 18% 16%,
+      rgba(104, 130, 251, 0.24),
+      transparent 42%
+    ),
+    radial-gradient(circle at 82% 10%, rgba(76, 201, 240, 0.17), transparent 38%);
+  animation: heroDrift 10s ease-in-out infinite;
+}
+
+.heroContent {
+  max-width: 76ch;
+}
+
+.heroContent h1 {
+  font-size: clamp(1.85rem, 4.4vw, 3rem);
+  line-height: 1.12;
+  margin-bottom: var(--space-4);
+}
+
+.heroContent p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.heroActions {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.primaryButton,
+.secondaryButton,
+.backLink {
+  min-height: 46px;
+  padding: 0.7rem 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.primaryButton {
+  color: #ffffff;
+  background: linear-gradient(130deg, var(--accent-2), var(--accent-1));
+}
+
+.secondaryButton,
+.backLink {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.backLink:hover {
+  transform: translateY(-2px);
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.backLink:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 3px;
+}
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.panel {
+  padding: var(--space-6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.panel h2 {
+  margin-bottom: var(--space-4);
+}
+
+.panel ul {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.panel li {
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.72;
+  padding-left: 1rem;
+}
+
+.panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.66rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(130deg, var(--accent-2), var(--accent-1));
+}
+
+.panel:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+}
+
+@keyframes heroDrift {
+  0%,
+  100% {
+    background-position:
+      0% 0%,
+      0% 0%;
+  }
+  50% {
+    background-position:
+      7% 3%,
+      -5% 2%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+

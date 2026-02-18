@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { CTASection } from "@/components/common/CTASection";
+import { Reveal } from "@/components/common/Reveal";
 import { ServiceCard } from "@/components/common/ServiceCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { brand } from "@/config/brand";
@@ -33,7 +34,7 @@ export default function Home() {
 
       <section className={styles.hero}>
         <div className={`container ${styles.heroGrid}`}>
-          <div className={styles.heroContent}>
+          <Reveal className={styles.heroContent}>
             <p className={styles.kicker}>Премиум IT решения за компании в България</p>
             <h1>Управлявани IT услуги, сигурност и стабилна инфраструктура</h1>
             <p className={styles.heroText}>
@@ -48,9 +49,9 @@ export default function Home() {
                 Разгледайте услугите
               </Link>
             </div>
-          </div>
+          </Reveal>
 
-          <div className={styles.heroVisual}>
+          <Reveal className={styles.heroVisual} delay={120}>
             <Image
               src="/hero-operations.svg"
               alt="Визуализация на IT мониторинг и операции"
@@ -58,7 +59,7 @@ export default function Home() {
               height={430}
               priority
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -72,11 +73,13 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.benefitsGrid}>
-            {benefits.map((benefit) => (
-              <article key={benefit.title} className={styles.benefitCard}>
-                <h3>{benefit.title}</h3>
-                <p>{benefit.description}</p>
-              </article>
+            {benefits.map((benefit, index) => (
+              <Reveal key={benefit.title} delay={index * 70}>
+                <article className={styles.benefitCard}>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.description}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -92,13 +95,14 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.servicesGrid}>
-            {services.map((service) => (
-              <ServiceCard
-                key={service.slug}
-                title={service.navLabel}
-                description={service.cardDescription}
-                href={`/services/${service.slug}`}
-              />
+            {services.map((service, index) => (
+              <Reveal key={service.slug} delay={index * 55}>
+                <ServiceCard
+                  title={service.navLabel}
+                  description={service.cardDescription}
+                  href={`/services/${service.slug}`}
+                />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -115,11 +119,13 @@ export default function Home() {
           </div>
           <div className={styles.processGrid}>
             {processSteps.map((step, index) => (
-              <article key={step.title} className={styles.processCard}>
-                <span className={styles.stepIndex}>{`0${index + 1}`}</span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </article>
+              <Reveal key={step.title} delay={index * 80}>
+                <article className={styles.processCard}>
+                  <span className={styles.stepIndex}>{`0${index + 1}`}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -135,11 +141,13 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.trustGrid}>
-            {trustIndicators.map((indicator) => (
-              <article key={indicator.metric} className={styles.trustCard}>
-                <p className={styles.metric}>{indicator.metric}</p>
-                <p>{indicator.label}</p>
-              </article>
+            {trustIndicators.map((indicator, index) => (
+              <Reveal key={indicator.metric} delay={index * 70}>
+                <article className={styles.trustCard}>
+                  <p className={styles.metric}>{indicator.metric}</p>
+                  <p>{indicator.label}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

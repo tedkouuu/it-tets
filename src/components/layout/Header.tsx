@@ -31,10 +31,14 @@ export function Header() {
 
   const navLinks = [
     { href: "/", label: "Начало" },
-    { href: "/services", label: "Всички услуги" },
     { href: "/reviews", label: "Отзиви" },
     { href: "/faq", label: "Въпроси" },
     { href: "/contact", label: "Контакти" },
+  ];
+
+  const servicesMenuItems = [
+    { href: "/services", label: "Всички услуги" },
+    ...serviceLinks,
   ];
 
   return (
@@ -61,7 +65,7 @@ export function Header() {
             </Link>
           ))}
 
-          <ServicesDropdown items={serviceLinks} pathname={pathname} />
+          <ServicesDropdown items={servicesMenuItems} pathname={pathname} />
 
           {navLinks.slice(1).map((link) => (
             <Link

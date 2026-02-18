@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { CTASection } from "@/components/common/CTASection";
+import { Reveal } from "@/components/common/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { reviews } from "@/data/content";
 import { createBreadcrumbSchema } from "@/lib/jsonld";
@@ -35,29 +36,33 @@ export default function ReviewsPage() {
               { label: "Отзиви", href: "/reviews" },
             ]}
           />
-          <h1>Какво споделят нашите клиенти за работата с нас</h1>
-          <p>
-            Фирмите, с които работим, ценят комбинацията от бърза реакция,
-            стратегическо планиране и устойчиви технологични решения.
-          </p>
+          <Reveal>
+            <h1>Какво споделят нашите клиенти за работата с нас</h1>
+            <p>
+              Фирмите, с които работим, ценят комбинацията от бърза реакция,
+              стратегическо планиране и устойчиви технологични решения.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className="container">
           <div className={styles.grid}>
-            {reviews.map((review) => (
-              <article key={`${review.name}-${review.company}`} className={styles.card}>
-                <div className={styles.stars} aria-label="Оценка 5 от 5">
-                  {"★★★★★"}
-                </div>
-                <p className={styles.quote}>&bdquo;{review.quote}&ldquo;</p>
-                <div className={styles.author}>
-                  <p className={styles.name}>{review.name}</p>
-                  <p>{review.role}</p>
-                  <p>{review.company}</p>
-                </div>
-              </article>
+            {reviews.map((review, index) => (
+              <Reveal key={`${review.name}-${review.company}`} delay={index * 70}>
+                <article className={styles.card}>
+                  <div className={styles.stars} aria-label="Оценка 5 от 5">
+                    {"★★★★★"}
+                  </div>
+                  <p className={styles.quote}>&bdquo;{review.quote}&ldquo;</p>
+                  <div className={styles.author}>
+                    <p className={styles.name}>{review.name}</p>
+                    <p>{review.role}</p>
+                    <p>{review.company}</p>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -41,7 +41,23 @@ export function ScrollToTop() {
       className={styles.button}
       onClick={handleClick}
     >
-      Нагоре
+      <svg
+        className={styles.icon}
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M12 19V5M12 5L6.5 10.5M12 5L17.5 10.5"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     </button>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { CTASection } from "@/components/common/CTASection";
+import { Reveal } from "@/components/common/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqItems } from "@/data/content";
 import { createBreadcrumbSchema, createFaqSchema } from "@/lib/jsonld";
@@ -36,22 +37,26 @@ export default function FaqPage() {
               { label: "Често задавани въпроси", href: "/faq" },
             ]}
           />
-          <h1>Често задавани въпроси за IT услуги и поддръжка</h1>
-          <p>
-            Подготвихме практични отговори, които помагат да вземете информирано
-            решение за поддръжка, сигурност и дългосрочна IT стратегия.
-          </p>
+          <Reveal>
+            <h1>Често задавани въпроси за IT услуги и поддръжка</h1>
+            <p>
+              Подготвихме практични отговори, които помагат да вземете информирано
+              решение за поддръжка, сигурност и дългосрочна IT стратегия.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className="container">
           <div className={styles.list}>
-            {faqItems.map((item) => (
-              <details key={item.question} className={styles.item}>
-                <summary>{item.question}</summary>
-                <p>{item.answer}</p>
-              </details>
+            {faqItems.map((item, index) => (
+              <Reveal key={item.question} delay={index * 65}>
+                <details className={styles.item}>
+                  <summary>{item.question}</summary>
+                  <p>{item.answer}</p>
+                </details>
+              </Reveal>
             ))}
           </div>
         </div>

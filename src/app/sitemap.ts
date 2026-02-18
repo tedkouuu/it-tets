@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { brand } from "@/config/brand";
 import { services } from "@/data/services";
+import { allSubservices } from "@/data/subservices";
 
 const staticRoutes = ["/", "/services", "/contact", "/reviews", "/faq"];
 
@@ -18,6 +19,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  return [...staticEntries, ...serviceEntries];
+  const subserviceEntries = allSubservices.map((subservice) => ({
+    url: `${brand.siteUrl}/services/${subservice.parentSlug}/${subservice.slug}`,
+    lastModified: now,
+  }));
+
+  return [...staticEntries, ...serviceEntries, ...subserviceEntries];
 }
 

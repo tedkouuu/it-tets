@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
 import { CTASection } from "@/components/common/CTASection";
+import { Reveal } from "@/components/common/Reveal";
 import { ServiceCard } from "@/components/common/ServiceCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { services } from "@/data/services";
@@ -48,13 +49,14 @@ export default function ServicesPage() {
       <section className={styles.section}>
         <div className="container">
           <div className={styles.grid}>
-            {services.map((service) => (
-              <ServiceCard
-                key={service.slug}
-                title={service.navLabel}
-                description={service.cardDescription}
-                href={`/services/${service.slug}`}
-              />
+            {services.map((service, index) => (
+              <Reveal key={service.slug} delay={index * 55}>
+                <ServiceCard
+                  title={service.navLabel}
+                  description={service.cardDescription}
+                  href={`/services/${service.slug}`}
+                />
+              </Reveal>
             ))}
           </div>
         </div>

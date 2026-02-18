@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Breadcrumbs } from "@/components/common/Breadcrumbs";
+import { Reveal } from "@/components/common/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { brand } from "@/config/brand";
@@ -35,40 +36,46 @@ export default function ContactPage() {
               { label: "Контакти", href: "/contact" },
             ]}
           />
-          <h1>Свържете се с нас за премиум IT решение</h1>
-          <p>
-            Опишете бизнес нуждите си и ще получите експертна консултация, ясни
-            следващи стъпки и реалистичен график за изпълнение.
-          </p>
+          <Reveal>
+            <h1>Свържете се с нас за премиум IT решение</h1>
+            <p>
+              Опишете бизнес нуждите си и ще получите експертна консултация, ясни
+              следващи стъпки и реалистичен график за изпълнение.
+            </p>
+          </Reveal>
         </div>
       </section>
 
       <section className={styles.section}>
         <div className={`container ${styles.grid}`}>
-          <aside className={styles.contactCard}>
-            <h2>Бърз контакт</h2>
-            <p>
-              За приоритетно обслужване и техническа консултация, обадете се директно
-              на нашия екип.
-            </p>
-            <a href={`tel:${brand.phone}`} className={styles.phone}>
-              {brand.phone}
-            </a>
-            <div className={styles.points}>
-              <p>Работим с компании от цяла България.</p>
-              <p>Възможност за абонаментни и проектни модели.</p>
-              <p>Фокус върху сигурност, непрекъсваемост и резултати.</p>
-            </div>
-          </aside>
+          <Reveal>
+            <aside className={styles.contactCard}>
+              <h2>Бърз контакт</h2>
+              <p>
+                За приоритетно обслужване и техническа консултация, обадете се директно
+                на нашия екип.
+              </p>
+              <a href={`tel:${brand.phone}`} className={styles.phone}>
+                {brand.phone}
+              </a>
+              <div className={styles.points}>
+                <p>Работим с компании от цяла България.</p>
+                <p>Възможност за абонаментни и проектни модели.</p>
+                <p>Фокус върху сигурност, непрекъсваемост и резултати.</p>
+              </div>
+            </aside>
+          </Reveal>
 
-          <article className={styles.formCard}>
-            <h2>Изпратете запитване</h2>
-            <p className={styles.formIntro}>
-              Въведете име, контакт и кратко описание. Ще се свържем с вас с конкретни
-              предложения за действие.
-            </p>
-            <ContactForm />
-          </article>
+          <Reveal delay={120}>
+            <article className={styles.formCard}>
+              <h2>Изпратете запитване</h2>
+              <p className={styles.formIntro}>
+                Въведете име, контакт и кратко описание. Ще се свържем с вас с конкретни
+                предложения за действие.
+              </p>
+              <ContactForm />
+            </article>
+          </Reveal>
         </div>
       </section>
     </>

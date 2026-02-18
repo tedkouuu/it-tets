@@ -3,6 +3,8 @@
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   display: grid;
   gap: var(--space-8);
   align-items: center;
@@ -17,6 +19,21 @@
     radial-gradient(circle at 80% 75%, rgba(67, 97, 238, 0.26), transparent 42%),
     rgba(11, 16, 32, 0.92);
   box-shadow: var(--shadow-xl);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 68%
+  );
+  transform: translateX(-55%);
+  animation: ctaShine 5.8s ease-in-out infinite;
 }
 
 .content h2 {
@@ -73,6 +90,18 @@
 .secondaryButton:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 3px;
+}
+
+@keyframes ctaShine {
+  0% {
+    transform: translateX(-68%);
+  }
+  34% {
+    transform: translateX(88%);
+  }
+  100% {
+    transform: translateX(88%);
+  }
 }
 
 @media (min-width: 900px) {

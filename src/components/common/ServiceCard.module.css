@@ -38,10 +38,32 @@
   mask-composite: exclude;
 }
 
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -28% 55% 45% -22%;
+  background: radial-gradient(
+    circle,
+    rgba(76, 201, 240, 0.28) 0%,
+    rgba(76, 201, 240, 0) 72%
+  );
+  transform: translateX(-18px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-normal),
+    transform var(--transition-normal);
+}
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: var(--border-strong);
+}
+
+.card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .title {
@@ -65,7 +87,7 @@
 }
 
 .link::after {
-  content: "->";
+  content: "→";
   opacity: 0;
   transform: translateX(-6px);
   transition:

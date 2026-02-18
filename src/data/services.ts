@@ -1,13 +1,15 @@
+export type ServiceSlug =
+  | "it-support"
+  | "networks"
+  | "servers"
+  | "cloud"
+  | "cybersecurity"
+  | "backup-dr"
+  | "consulting"
+  | "subscription";
+
 export type ServicePageData = {
-  slug:
-    | "it-support"
-    | "networks"
-    | "servers"
-    | "cloud"
-    | "cybersecurity"
-    | "backup-dr"
-    | "consulting"
-    | "subscription";
+  slug: ServiceSlug;
   navLabel: string;
   title: string;
   intro: string;
@@ -336,5 +338,5 @@ export const services: ServicePageData[] = [
 
 export const serviceBySlug = Object.fromEntries(
   services.map((service) => [service.slug, service]),
-) as Record<ServicePageData["slug"], ServicePageData>;
+) as Record<ServiceSlug, ServicePageData>;
 
