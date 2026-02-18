@@ -5,7 +5,7 @@ export const siteUrl = "https://guardnoc.com";
 export const phone = "0888271714";
 export const defaultOGImage = "/og.jpg";
 export const shortDescription =
-  "GuardNOC предоставя премиум управлявани IT услуги за фирми в България - поддръжка, мрежи, cloud, киберсигурност и надежден 24/7 мониторинг.";
+  "GuardNOC е технологичен партньор за NOC наблюдение, киберсигурност, cloud архитектура и критична IT инфраструктура с ясно дефинирани SLA нива.";
 
 export const socials = {
   facebook: "",

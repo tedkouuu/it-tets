@@ -33,7 +33,15 @@
     rgba(255, 255, 255, 0) 68%
   );
   transform: translateX(-55%);
-  animation: ctaShine 5.8s ease-in-out infinite;
+  opacity: 0;
+  transition:
+    transform 900ms ease,
+    opacity 480ms ease;
+}
+
+.card:hover::before {
+  transform: translateX(70%);
+  opacity: 0.78;
 }
 
 .content h2 {
@@ -92,15 +100,18 @@
   outline-offset: 3px;
 }
 
-@keyframes ctaShine {
-  0% {
-    transform: translateX(-68%);
+@media (max-width: 899px) {
+  .content {
+    text-align: center;
+    justify-items: center;
   }
-  34% {
-    transform: translateX(88%);
+
+  .content p {
+    margin-inline: auto;
   }
-  100% {
-    transform: translateX(88%);
+
+  .actions {
+    justify-content: center;
   }
 }
 

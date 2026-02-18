@@ -35,14 +35,18 @@
   z-index: -1;
   border-radius: inherit;
   border: 1px solid rgba(76, 201, 240, 0.22);
-  opacity: 0.45;
-  animation: pulseRing 2.2s ease-in-out infinite;
+  opacity: 0.3;
+  transition: opacity var(--transition-fast);
 }
 
 .button:hover {
   transform: translateY(-3px);
   border-color: var(--accent-2);
   box-shadow: 0 0 0 4px rgba(76, 201, 240, 0.15), var(--shadow-lg);
+}
+
+.button:hover::before {
+  opacity: 0.5;
 }
 
 .button:focus-visible {
@@ -56,17 +60,5 @@
 
 .button:hover .icon {
   transform: translateY(-1px);
-}
-
-@keyframes pulseRing {
-  0%,
-  100% {
-    transform: scale(0.96);
-    opacity: 0.25;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
 }
 

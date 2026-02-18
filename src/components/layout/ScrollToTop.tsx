@@ -10,13 +10,31 @@ export function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      setVisible(window.scrollY > SCROLL_THRESHOLD);
+    let rafId = 0;
+
+    const updateVisibility = () => {
+      const nextValue = window.scrollY > SCROLL_THRESHOLD;
+      setVisible((previous) => (previous === nextValue ? previous : nextValue));
+      rafId = 0;
     };
 
-    onScroll();
+    const onScroll = () => {
+      if (rafId !== 0) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(updateVisibility);
+    };
+
+    updateVisibility();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId !== 0) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   const handleClick = () => {

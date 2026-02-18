@@ -7,7 +7,6 @@
       transparent 42%
     ),
     radial-gradient(circle at 82% 10%, rgba(76, 201, 240, 0.17), transparent 38%);
-  animation: heroDrift 10s ease-in-out infinite;
 }
 
 .heroContent {
@@ -126,17 +125,26 @@
   border-color: var(--border-strong);
 }
 
-@keyframes heroDrift {
-  0%,
-  100% {
-    background-position:
-      0% 0%,
-      0% 0%;
+@media (max-width: 767px) {
+  .heroContent {
+    text-align: center;
+    margin-inline: auto;
   }
-  50% {
-    background-position:
-      7% 3%,
-      -5% 2%;
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .panel {
+    text-align: center;
+  }
+
+  .panel li {
+    padding-left: 0;
+  }
+
+  .panel li::before {
+    display: none;
   }
 }
 

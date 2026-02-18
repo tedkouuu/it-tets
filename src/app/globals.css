@@ -93,9 +93,8 @@ body::after {
       rgba(76, 201, 240, 0.09),
       rgba(76, 201, 240, 0) 42%
     );
-  filter: blur(8px);
+  filter: none;
   opacity: 0.7;
-  animation: ambientFlow 18s ease-in-out infinite alternate;
 }
 
 a {
@@ -147,8 +146,8 @@ img {
       rgba(255, 255, 255, 0.03) 50%,
       rgba(255, 255, 255, 0) 80%
     );
-  background-size: 220% 220%;
-  animation: subtleSweep 16s linear infinite;
+  background-size: 180% 180%;
+  opacity: 0.25;
 }
 
 .container {
@@ -169,30 +168,19 @@ img {
   color: var(--text-secondary);
 }
 
-@keyframes ambientFlow {
-  0% {
-    transform: translate3d(-1.5%, -1%, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(1.2%, 1.4%, 0) scale(1.03);
-  }
-  100% {
-    transform: translate3d(-0.8%, 0.6%, 0) scale(1.01);
-  }
-}
-
-@keyframes subtleSweep {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 180% 0%;
-  }
-}
-
 @media (max-width: 500px) {
   .container {
     width: min(1180px, calc(100% - 1.25rem));
+  }
+}
+
+@media (max-width: 767px) {
+  body::after {
+    opacity: 0.45;
+  }
+
+  .site-main::before {
+    opacity: 0.16;
   }
 }
 

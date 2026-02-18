@@ -21,7 +21,6 @@
   letter-spacing: 0.08em;
   font-weight: 700;
   font-size: 0.8rem;
-  animation: kickerGlow 2.6s ease-in-out infinite;
 }
 
 .heroText {
@@ -89,7 +88,6 @@
   );
   box-shadow: var(--shadow-xl);
   overflow: hidden;
-  animation: floatPanel 7s ease-in-out infinite;
 }
 
 .heroVisual img {
@@ -107,8 +105,16 @@
     rgba(255, 255, 255, 0.18) 48%,
     rgba(255, 255, 255, 0) 65%
   );
-  transform: translateX(-44%);
-  animation: sweepShine 5.5s ease-in-out infinite;
+  transform: translateX(-65%);
+  opacity: 0;
+  transition:
+    transform 900ms ease,
+    opacity 520ms ease;
+}
+
+.heroVisual:hover::before {
+  transform: translateX(60%);
+  opacity: 0.75;
 }
 
 .section {
@@ -193,38 +199,6 @@
   color: var(--text-primary);
 }
 
-@keyframes floatPanel {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-@keyframes sweepShine {
-  0% {
-    transform: translateX(-65%);
-  }
-  35% {
-    transform: translateX(85%);
-  }
-  100% {
-    transform: translateX(85%);
-  }
-}
-
-@keyframes kickerGlow {
-  0%,
-  100% {
-    text-shadow: 0 0 0 rgba(76, 201, 240, 0);
-  }
-  50% {
-    text-shadow: 0 0 14px rgba(76, 201, 240, 0.38);
-  }
-}
-
 @media (min-width: 768px) {
   .benefitsGrid,
   .processGrid {
@@ -233,6 +207,37 @@
 
   .trustGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .heroContent {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .heroContent h1,
+  .heroText {
+    margin-inline: auto;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .heroVisual {
+    margin-inline: auto;
+  }
+
+  .section :global(.section-heading) {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .benefitCard,
+  .processCard,
+  .trustCard {
+    text-align: center;
   }
 }
 

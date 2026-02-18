@@ -6,7 +6,6 @@
       rgba(104, 130, 251, 0) 42%
     ),
     radial-gradient(circle at 82% 8%, rgba(76, 201, 240, 0.14), transparent 40%);
-  animation: heroFloat 10s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -112,23 +111,30 @@
   color: var(--text-secondary);
 }
 
+@media (max-width: 767px) {
+  .hero {
+    text-align: center;
+  }
+
+  .hero h1,
+  .hero p {
+    margin-inline: auto;
+  }
+
+  .contactCard,
+  .formCard {
+    text-align: center;
+  }
+
+  .phone {
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: 0.9fr 1.1fr;
   }
 }
 
-@keyframes heroFloat {
-  0%,
-  100% {
-    background-position:
-      0% 0%,
-      0% 0%;
-  }
-  50% {
-    background-position:
-      7% 2%,
-      -6% 2%;
-  }
-}
 

@@ -7,7 +7,6 @@
       transparent 43%
     ),
     radial-gradient(circle at 78% 8%, rgba(76, 201, 240, 0.15), transparent 36%);
-  animation: heroShift 10s ease-in-out infinite;
 }
 
 .heroContent {
@@ -175,23 +174,41 @@
   border-color: var(--border-strong);
 }
 
-@keyframes heroShift {
-  0%,
-  100% {
-    background-position:
-      0% 0%,
-      0% 0%;
-  }
-  50% {
-    background-position:
-      8% 2%,
-      -6% 2%;
-  }
-}
-
 @media (min-width: 760px) {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .heroContent {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .section h2 {
+    text-align: center;
+  }
+
+  .card,
+  .panel {
+    text-align: center;
+  }
+
+  .cardLink {
+    justify-self: center;
+  }
+
+  .panel li {
+    padding-left: 0;
+  }
+
+  .panel li::before {
+    display: none;
   }
 }
 

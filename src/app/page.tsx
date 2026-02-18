@@ -15,9 +15,9 @@ import { createPageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Управлявани IT услуги в България за сигурен растеж",
+  title: "NOC мониторинг и IT инфраструктура за сигурен растеж",
   description:
-    `Премиум управлявани IT услуги, cloud, мрежи и киберсигурност за компании в България. Обадете се на ${brand.phone} за бърз технически план.`,
+    `GuardNOC осигурява NOC мониторинг, cloud, мрежова сигурност и инфраструктура за устойчиви операции. Обадете се на ${brand.phone} за консултация.`,
   path: "/",
   keywords: [
     "IT услуги България",
@@ -35,11 +35,11 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={`container ${styles.heroGrid}`}>
           <Reveal className={styles.heroContent}>
-            <p className={styles.kicker}>Премиум IT решения за компании в България</p>
-            <h1>Управлявани IT услуги, сигурност и стабилна инфраструктура</h1>
+            <p className={styles.kicker}>Стратегически IT операции и NOC 24/7</p>
+            <h1>NOC мониторинг, киберсигурност и надеждна IT инфраструктура</h1>
             <p className={styles.heroText}>
-              Помагаме на бизнеса да работи без прекъсване с проактивна IT поддръжка,
-              cloud оптимизация, надеждни мрежи и измерими SLA показатели.
+              Изграждаме високонадеждна технологична среда за компании, които изискват
+              непрекъсваемост, предвидимост и контрол върху риска.
             </p>
             <div className={styles.heroActions}>
               <a href={`tel:${brand.phone}`} className={styles.primaryButton}>

@@ -23,16 +23,18 @@ const bodyFont = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(brand.siteUrl),
   title: {
-    default: "Управлявани IT услуги и киберсигурност за бизнеса",
+    default: "NOC мониторинг, киберсигурност и IT инфраструктура",
     template: `%s | ${brand.brandName}`,
   },
-  description: brand.shortDescription,
+  description:
+    "GuardNOC осигурява NOC наблюдение, киберсигурност, cloud и инфраструктурни решения с ясни SLA нива и професионално изпълнение.",
   alternates: {
     canonical: brand.siteUrl,
   },
   openGraph: {
-    title: "Управлявани IT услуги и киберсигурност за бизнеса",
-    description: brand.shortDescription,
+    title: "NOC мониторинг, киберсигурност и IT инфраструктура",
+    description:
+      "GuardNOC осигурява NOC наблюдение, киберсигурност, cloud и инфраструктурни решения с ясни SLA нива и професионално изпълнение.",
     url: brand.siteUrl,
     siteName: brand.brandName,
     locale: "bg_BG",
@@ -41,8 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Управлявани IT услуги и киберсигурност за бизнеса",
-    description: brand.shortDescription,
+    title: "NOC мониторинг, киберсигурност и IT инфраструктура",
+    description:
+      "GuardNOC осигурява NOC наблюдение, киберсигурност, cloud и инфраструктурни решения с ясни SLA нива и професионално изпълнение.",
     images: [brand.defaultOGImage],
   },
 };
