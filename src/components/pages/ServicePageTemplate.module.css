@@ -1,0 +1,146 @@
+.hero {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+  background: radial-gradient(
+      circle at 22% 22%,
+      rgba(104, 130, 251, 0.24),
+      transparent 43%
+    ),
+    radial-gradient(circle at 78% 8%, rgba(76, 201, 240, 0.15), transparent 36%);
+}
+
+.heroContent {
+  max-width: 75ch;
+}
+
+.heroContent h1 {
+  font-size: clamp(1.9rem, 4.6vw, 3.1rem);
+  line-height: 1.14;
+  margin-bottom: var(--space-4);
+}
+
+.heroContent p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.03rem;
+}
+
+.heroActions {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.primaryButton {
+  color: #ffffff;
+  background: linear-gradient(130deg, var(--accent-2), var(--accent-1));
+}
+
+.secondaryButton {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 3px;
+}
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+.cards {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.card {
+  padding: var(--space-5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.card h3 {
+  font-size: 1.04rem;
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.panel {
+  padding: var(--space-6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+}
+
+.panel h2 {
+  margin-bottom: var(--space-4);
+}
+
+.panel ul {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.panel li {
+  position: relative;
+  padding-left: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.panel li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+}
+
+@media (min-width: 760px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+

@@ -1,0 +1,86 @@
+.hero {
+  padding: var(--space-12) 0 var(--space-10);
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+  line-height: 1.12;
+  margin-bottom: var(--space-4);
+  max-width: 18ch;
+}
+
+.hero p {
+  color: var(--text-secondary);
+  max-width: 67ch;
+  line-height: 1.8;
+}
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contactCard,
+.formCard {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-md);
+}
+
+.contactCard {
+  padding: var(--space-6);
+}
+
+.contactCard h2 {
+  margin-bottom: var(--space-3);
+}
+
+.contactCard p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.phone {
+  margin-top: var(--space-4);
+  display: inline-flex;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-2);
+}
+
+.phone:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.points {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.formCard {
+  padding: var(--space-6);
+}
+
+.formCard h2 {
+  margin-bottom: var(--space-2);
+}
+
+.formIntro {
+  margin-bottom: var(--space-5);
+  color: var(--text-secondary);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
