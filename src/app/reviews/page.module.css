@@ -114,6 +114,24 @@
 
   .card {
     text-align: center;
+    align-items: center;
+  }
+
+  .stars {
+    text-align: center;
+  }
+
+  .quote {
+    text-align: center;
+  }
+
+  .author {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .name {
+    text-align: center;
   }
 }
 

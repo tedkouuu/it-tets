@@ -73,3 +73,26 @@
   color: #b7fee1;
 }
 
+@media (max-width: 767px) {
+  .field label {
+    text-align: center;
+  }
+
+  .field input,
+  .field textarea {
+    text-align: center;
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+  .success {
+    text-align: center;
+  }
+
+  .error {
+    text-align: center;
+  }
+}
+

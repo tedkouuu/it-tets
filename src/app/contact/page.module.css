@@ -126,8 +126,32 @@
     text-align: center;
   }
 
+  .contactCard h2,
+  .formCard h2 {
+    text-align: center;
+  }
+
+  .contactCard p,
+  .formIntro {
+    text-align: center;
+  }
+
   .phone {
     margin-inline: auto;
+    justify-content: center;
+  }
+
+  .points {
+    justify-items: center;
+  }
+
+  .points p {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .points p::before {
+    display: none;
   }
 }
 

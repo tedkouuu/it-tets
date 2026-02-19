@@ -101,7 +101,22 @@
     margin-inline: auto;
   }
 
-  .item summary,
+  .item {
+    text-align: center;
+  }
+
+  .item summary {
+    text-align: center;
+    padding-right: var(--space-5);
+  }
+
+  .item summary::after {
+    position: static;
+    display: block;
+    transform: none;
+    margin-top: 0.25rem;
+  }
+
   .item p {
     text-align: center;
   }

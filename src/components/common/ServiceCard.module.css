@@ -114,3 +114,19 @@
   border-radius: 4px;
 }
 
+@media (max-width: 767px) {
+  .card {
+    text-align: center;
+    align-items: center;
+  }
+
+  .title,
+  .description {
+    margin-inline: auto;
+  }
+
+  .link {
+    align-self: center;
+  }
+}
+

@@ -131,16 +131,39 @@
     margin-inline: auto;
   }
 
+  .heroContent h1 {
+    margin-inline: auto;
+  }
+
   .heroActions {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heroActions a {
+    width: min(100%, 320px);
+  }
+
+  .section h2 {
+    text-align: center;
   }
 
   .panel {
     text-align: center;
   }
 
+  .panel h2 {
+    text-align: center;
+  }
+
+  .panel ul {
+    justify-items: center;
+  }
+
   .panel li {
     padding-left: 0;
+    text-align: center;
   }
 
   .panel li::before {

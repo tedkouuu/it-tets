@@ -44,6 +44,7 @@
   .hero h1,
   .hero p {
     margin-inline: auto;
+    text-align: center;
   }
 }
 

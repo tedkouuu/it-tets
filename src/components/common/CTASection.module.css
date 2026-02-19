@@ -106,12 +106,26 @@
     justify-items: center;
   }
 
+  .content h2 {
+    text-align: center;
+  }
+
   .content p {
     margin-inline: auto;
+    text-align: center;
   }
 
   .actions {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .actions a,
+  .primaryButton,
+  .secondaryButton {
+    width: min(100%, 320px);
   }
 }
 
