@@ -13,12 +13,16 @@
   line-height: 1.14;
   margin-bottom: var(--space-4);
   max-width: 20ch;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .hero p {
   max-width: 67ch;
   color: var(--text-secondary);
   line-height: 1.8;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .section {
@@ -91,36 +95,7 @@
   animation: answerFade 260ms ease;
 }
 
-@media (max-width: 767px) {
-  .hero {
-    text-align: center;
-  }
-
-  .hero h1,
-  .hero p {
-    margin-inline: auto;
-  }
-
-  .item {
-    text-align: center;
-  }
-
-  .item summary {
-    text-align: center;
-    padding-right: var(--space-5);
-  }
-
-  .item summary::after {
-    position: static;
-    display: block;
-    transform: none;
-    margin-top: 0.25rem;
-  }
-
-  .item p {
-    text-align: center;
-  }
-}
+/* hero centering handled in base styles */
 
 @keyframes answerFade {
   0% {

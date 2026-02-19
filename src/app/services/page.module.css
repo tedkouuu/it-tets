@@ -13,12 +13,16 @@
   line-height: 1.14;
   margin-bottom: var(--space-4);
   max-width: 18ch;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .hero p {
   max-width: 70ch;
   color: var(--text-secondary);
   line-height: 1.8;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .section {
@@ -36,17 +40,7 @@
   height: 100%;
 }
 
-@media (max-width: 767px) {
-  .hero {
-    text-align: center;
-  }
-
-  .hero h1,
-  .hero p {
-    margin-inline: auto;
-    text-align: center;
-  }
-}
+/* hero centering handled in base styles */
 
 @media (min-width: 768px) {
   .grid {

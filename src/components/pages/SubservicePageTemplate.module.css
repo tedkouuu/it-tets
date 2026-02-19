@@ -87,6 +87,7 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   background: var(--surface-raised);
+  text-align: center;
   transition:
     transform var(--transition-normal),
     border-color var(--transition-normal);
@@ -94,12 +95,14 @@
 
 .panel h2 {
   margin-bottom: var(--space-4);
+  text-align: center;
 }
 
 .panel ul {
   list-style: none;
   display: grid;
   gap: 0.8rem;
+  justify-items: center;
 }
 
 .panel li {
@@ -107,6 +110,7 @@
   color: var(--text-secondary);
   line-height: 1.72;
   padding-left: 1rem;
+  text-align: center;
 }
 
 .panel li::before {
@@ -149,21 +153,8 @@
     text-align: center;
   }
 
-  .panel {
-    text-align: center;
-  }
-
-  .panel h2 {
-    text-align: center;
-  }
-
-  .panel ul {
-    justify-items: center;
-  }
-
   .panel li {
     padding-left: 0;
-    text-align: center;
   }
 
   .panel li::before {

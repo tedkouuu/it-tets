@@ -44,21 +44,30 @@
   opacity: 0.78;
 }
 
+.content {
+  text-align: center;
+  justify-items: center;
+}
+
 .content h2 {
   font-size: clamp(1.5rem, 3.2vw, 2.2rem);
   margin-bottom: var(--space-3);
+  text-align: center;
 }
 
 .content p {
   color: var(--text-secondary);
   max-width: 62ch;
   line-height: 1.75;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+  justify-content: center;
 }
 
 .primaryButton,
@@ -101,22 +110,7 @@
 }
 
 @media (max-width: 899px) {
-  .content {
-    text-align: center;
-    justify-items: center;
-  }
-
-  .content h2 {
-    text-align: center;
-  }
-
-  .content p {
-    margin-inline: auto;
-    text-align: center;
-  }
-
   .actions {
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -129,9 +123,5 @@
   }
 }
 
-@media (min-width: 900px) {
-  .card {
-    grid-template-columns: 1.25fr auto;
-  }
-}
+/* card stays single-column centered at all sizes */
 
