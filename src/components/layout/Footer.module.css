@@ -13,6 +13,14 @@
   padding-bottom: var(--space-12);
   display: grid;
   gap: var(--space-8);
+  text-align: center;
+  justify-items: center;
+  align-items: start;
+}
+
+.grid > div {
+  display: grid;
+  justify-items: center;
 }
 
 .heading {
@@ -28,12 +36,14 @@
 .about p {
   color: var(--text-secondary);
   line-height: 1.75;
-  max-width: 40ch;
+  max-width: 48ch;
+  margin-inline: auto;
 }
 
 .phone {
   margin-top: var(--space-4);
   display: inline-flex;
+  justify-content: center;
   color: var(--accent-2);
   font-weight: 700;
 }
@@ -42,6 +52,35 @@
   list-style: none;
   display: grid;
   gap: 0.65rem;
+  justify-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.list > li {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+}
+
+.subList {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+}
+
+.subList a {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.subList a:hover {
+  color: var(--text-secondary);
 }
 
 .list a {
@@ -65,29 +104,17 @@
   padding: var(--space-4) 0;
   color: var(--text-muted);
   font-size: 0.9rem;
+  text-align: center;
 }
 
-@media (max-width: 899px) {
+.bottom :global(.container) {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
   .grid {
-    text-align: center;
-    justify-items: center;
-  }
-
-  .about {
-    display: grid;
-    justify-items: center;
-  }
-
-  .about p {
-    max-width: 50ch;
-  }
-
-  .list {
-    justify-items: center;
-  }
-
-  .bottom {
-    text-align: center;
+    gap: 1rem;
   }
 }
 

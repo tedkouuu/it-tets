@@ -168,9 +168,12 @@ img {
   color: var(--text-secondary);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .container {
-    width: min(1180px, calc(100% - 1.25rem));
+    width: 100%;
+    max-width: 420px;
+    padding-inline: 16px;
+    margin-inline: auto;
   }
 }
 

@@ -50,7 +50,11 @@ export default function ReviewsPage() {
         <div className="container">
           <div className={styles.grid}>
             {reviews.map((review, index) => (
-              <Reveal key={`${review.name}-${review.company}`} delay={index * 70}>
+              <Reveal
+                key={`${review.name}-${review.company}`}
+                delay={index * 70}
+                className={styles.cardItem}
+              >
                 <article className={styles.card}>
                   <div className={styles.stars} aria-label="Оценка 5 от 5">
                     {"★★★★★"}

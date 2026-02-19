@@ -49,6 +49,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  flex-shrink: 0;
 }
 
 .phoneLink {
@@ -181,23 +182,27 @@
 .mobileNav {
   display: grid;
   padding: 0.6rem;
-  gap: 0.2rem;
+  gap: 0.4rem;
   max-height: min(74vh, 620px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  justify-items: center;
 }
 
 .mobileLink,
 .mobileServicesTrigger,
 .mobileSubLink {
+  width: 100%;
+  max-width: 360px;
   min-height: 44px;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 0.9rem;
   color: var(--text-secondary);
   font-weight: 600;
+  text-align: center;
   transition:
     color var(--transition-fast),
     background var(--transition-fast);
@@ -224,9 +229,12 @@
   background: transparent;
   font: inherit;
   cursor: pointer;
+  position: relative;
 }
 
 .mobileChevron {
+  position: absolute;
+  right: 0.9rem;
   transition: transform var(--transition-fast);
 }
 
@@ -261,10 +269,59 @@
 }
 
 @media (max-width: 500px) {
+  .inner {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-4);
+  }
+
+  .brandRow {
+    gap: var(--space-3);
+    align-items: center;
+  }
+
+  .brandLink {
+    max-width: 215px;
+    gap: 0.18rem;
+  }
+
+  .brandName {
+    font-size: 1.06rem;
+    line-height: 1.1;
+  }
+
+  .brandTagline {
+    font-size: 0.73rem;
+    line-height: 1.25;
+  }
+
   .phoneLink {
     min-height: 38px;
     padding: 0.4rem 0.75rem;
     font-size: 0.92rem;
+  }
+
+  .menuButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobilePanel {
+    top: calc(100% + 0.25rem);
+  }
+
+  .mobileNav {
+    padding: 0.75rem;
+    gap: 0.45rem;
+  }
+
+  .mobileLink,
+  .mobileServicesTrigger,
+  .mobileSubLink {
+    min-height: 46px;
+  }
+
+  .mobileSubLink {
+    padding-left: 0.9rem;
   }
 }
 

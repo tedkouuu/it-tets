@@ -50,7 +50,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className={styles.grid}>
             {services.map((service, index) => (
-              <Reveal key={service.slug} delay={index * 55}>
+              <Reveal key={service.slug} delay={index * 55} className={styles.cardItem}>
                 <ServiceCard
                   title={service.navLabel}
                   description={service.cardDescription}

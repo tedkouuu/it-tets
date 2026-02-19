@@ -27,7 +27,13 @@
 
 .grid {
   display: grid;
-  gap: var(--space-4);
+  gap: 1.5rem;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.cardItem {
+  height: 100%;
 }
 
 @media (max-width: 767px) {

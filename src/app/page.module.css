@@ -241,6 +241,42 @@
   }
 }
 
+@media (max-width: 480px) {
+  .hero {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-10);
+  }
+
+  .heroContent h1 {
+    max-width: 12ch;
+    margin-inline: auto;
+  }
+
+  .heroText {
+    max-width: 22.5rem;
+    margin-inline: auto;
+  }
+
+  .heroActions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .heroActions a {
+    width: min(100%, 320px);
+  }
+
+  .heroVisual {
+    width: min(100%, 360px);
+    margin-inline: auto;
+  }
+
+  .heroVisual img {
+    display: block;
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 1024px) {
   .heroGrid {
     grid-template-columns: 1fr minmax(420px, 0.95fr);
